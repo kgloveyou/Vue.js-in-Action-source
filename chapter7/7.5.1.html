@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>递归组件</title>
+</head>
+<body>
+<div id="app">
+  <child-component :count="1">
+  </child-component>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script>
+  Vue.component('child-component',{
+    name:'child-template',
+    props:{
+      count:{
+        type:Number,
+        default:1
+      }
+    },
+    template:'<div class="child">  <child-component :count="count+1" v-if="count<3"></child-component></div>'
+  });
+  var app=new Vue({
+      el:'#app'
+    }
+  )
+</script>
+</body>
+</html>

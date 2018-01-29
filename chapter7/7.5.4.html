@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>异步组件</title>
+</head>
+<body>
+<div id="app">
+  <child-component></child-component>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script>
+  Vue.component('child-component',function (reslove,reject) {
+    window.setTimeout(function () {
+      reslove({
+        template:'<div>我是异步渲染的</div>'
+      });
+    },2000);
+  });
+  var app=new Vue({
+      el:'#app'
+    }
+  )
+</script>
+</body>
+</html>

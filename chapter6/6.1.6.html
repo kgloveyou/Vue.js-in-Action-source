@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>复选框</title>
+</head>
+<body>
+<div id="app">
+  <input type="checkbox" v-model="checked" id="checked">
+  <label for="checked">选择状态：{{checked}}</label>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script>
+  var app=new Vue({
+      el:'#app',
+      data:{
+        checked:false
+      }
+    }
+  )
+</script>
+</body>
+</html>

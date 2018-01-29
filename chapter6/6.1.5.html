@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <input type="radio" v-model="picked" value="html" id="html">
+  <label for="html">HTML</label>
+  <input type="radio" v-model="picked" value="js" id="js">
+  <label for="js">JavaScript</label>
+  <input type="radio" v-model="picked" value="css" id="css">
+  <label for="css">CSS</label>
+  <br>
+  <p>选择的项是：{{picked}}</p>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script>
+  var app=new Vue({
+      el:'#app',
+      data:{
+        picked:'js'
+      }
+    }
+  )
+</script>
+</body>
+</html>

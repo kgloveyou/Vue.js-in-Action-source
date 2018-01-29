@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-if</title>
+</head>
+<body>
+<div id="app">
+  <template v-if="status===1">
+    <p>这是一段文本</p>
+    <p>这是一段文本</p>
+    <p>这是一段文本</p>
+  </template>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script>
+  var app=new Vue({
+      el:'#app',
+      data:{
+        status:1
+      }
+    }
+  )
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-if 示例</title>
+</head>
+<body>
+  <div id="app">
+    <p v-if="show">显示这段文字</p>
+  </div>
+  <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+  <script>
+    var app=new Vue({
+        el:'#app',
+        data:{
+          show:true
+        }
+      }
+    )
+  </script>
+</body>
+</html>

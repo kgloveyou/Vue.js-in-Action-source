@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>焦点元素</title>
+</head>
+<body>
+<div id="app">
+  <input type="text" v-focus>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script>
+  Vue.directive('focus',{
+    inserted:function (el) {
+      el.focus();
+    }
+  });
+  var app=new Vue({
+    el:'#app'
+  });
+</script>
+</body>
+</html>

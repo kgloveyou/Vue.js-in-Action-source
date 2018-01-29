@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>复选框2</title>
+</head>
+<body>
+<div id="app">
+  <input type="checkbox" v-model="checked" value="html" id="html">
+  <label for="html">HTML</label>
+  <input type="checkbox" v-model="checked" value="js" id="js">
+  <label for="js">JavaScript</label>
+  <input type="checkbox" v-model="checked" value="css" id="css">
+  <label for="css">CSS</label>
+  <br>
+  <p>选择的项是：{{checked}}</p>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script>
+  var app=new Vue({
+      el:'#app',
+      data:{
+        checked:['html','css']
+      }
+    }
+  )
+</script>
+</body>
+</html>

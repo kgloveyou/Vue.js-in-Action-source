@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-bind 示例</title>
+</head>
+<body>
+  <div id="app">
+    <a v-bind:href="url"></a>
+    <img v-bind:src="imgUrl">
+  </div>
+  <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+  <script>
+    var app=new Vue({
+        el:'#app',
+        data:{
+          url:'https://www.github.com',
+          imgUrl:'https://gss0.bdstatic.com/5eR1dDebRNRTm2_p8IuM_a/res/img/defaultIcon1229.png'
+        }
+      }
+    )
+  </script>
+</body>
+</html>

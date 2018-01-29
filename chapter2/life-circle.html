@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2.1.2生命周期</title>
+</head>
+<body>
+<div id="app">
+</div>
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script>
+  var app=new Vue({
+      el:'#app',
+      data:{
+        a:2
+      },
+      created:function () {
+        console.log(this.a);
+      },
+      mounted:function () {
+        console.log(this.$el);
+      }
+    }
+  )
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-test</title>
+</head>
+<body>
+<div id="app">
+  <div v-test="{msg:'hello',name:'allen'}"></div>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script>
+  Vue.directive('test',{
+    bind:function (el,binding,vnode) {
+      console.log(binding.value.msg);
+      console.log(binding.value.name);
+    }
+  });
+  var app=new Vue({
+    el:'#app'
+  });
+</script>
+</body>
+</html>

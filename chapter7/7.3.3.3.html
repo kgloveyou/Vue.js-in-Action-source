@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>非父子组件通信</title>
+</head>
+<body>
+<div id="app">
+  {{message}}
+  <component-a></component-a>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script>
+  var bus=new Vue();
+  Vue.component('component-a',{
+    template:'<button @click="handleEvent">通过父链直接修改数据</button>',
+    methods:{
+      handleEvent:function () {
+        this.$parent.message='来自组件component-a的内容';
+      }
+    }
+  });
+  var app=new Vue({
+      el:'#app',
+      data:{
+        message:''
+      }
+    }
+  )
+</script>
+</body>
+</html>

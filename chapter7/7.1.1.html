@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<Card style="width: 350px;">
+  <p slot="title">与XXX聊天中</p>
+  <a href="#" slot="extra">
+    <Icon type="android-close" size="18"></Icon>
+  </a>
+  <div style="height: 100px;">
+
+  </div>
+  <div>
+    <Row :gutter="16">
+      <i-col span="17">
+        <i-input v-model="value" placeholder="请输入..."></i-input>
+      </i-col>
+      <i-col span="4">
+        <i-button type="primary" icon="paper-airplane">
+          发送
+        </i-button>
+      </i-col>
+    </Row>
+  </div>
+</Card>
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <a href="http://www.apple.com" @click="handleClick('禁止打开',$event)">打开链接</a>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script>
+  var app=new Vue({
+      el:'#app',
+      methods:{
+        handleClick:function (message,event) {
+          event.preventDefault();
+          window.alert(message);
+        }
+      }
+  }
+  );
+</script>
+</body>
+</html>

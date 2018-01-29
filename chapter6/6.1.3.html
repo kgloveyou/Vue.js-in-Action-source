@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <input type="text" @input="handleInput" placeholder="输入...">
+  <p>输入的内容是：{{message}}</p>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script>
+  var app=new Vue({
+      el:'#app',
+      data:{
+        message:''
+      },
+      methods:{
+        handleInput:function (e) {
+          this.message=e.target.value;
+        }
+      }
+    }
+  )
+</script>
+</body>
+</html>

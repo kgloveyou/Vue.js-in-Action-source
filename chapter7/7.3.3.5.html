@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>非父子组件通信</title>
+</head>
+<body>
+<div id="app">
+  <button @click="handleRef">输出ref内容</button>
+  <p ref="p">内容</p>
+  <child-component ref="comA"></child-component>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script>
+  Vue.component('child-component',{
+    template:'<div>子组件</div>'
+  });
+  var app=new Vue({
+      el:'#app',
+      methods:{
+        handleRef:function () {
+          console.log(this.$refs.p);
+          console.log(this.$refs.comA);
+        }
+      }
+    }
+  )
+</script>
+</body>
+</html>

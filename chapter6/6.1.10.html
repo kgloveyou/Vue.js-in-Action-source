@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>下拉列表（v-for）</title>
+</head>
+<body>
+<div id="app">
+  <select v-model="selected">
+    <option v-for="option in options" :value="option.value">{{option.text}}</option>
+  </select>
+  <p>选择的项是：{{selected}}</p>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script>
+  var app=new Vue({
+      el:'#app',
+      data:{
+        selected:'html',
+        options:[{
+          text:'HMTL',
+          value:'html'
+        },
+          {
+            text:'JavaScript',
+            value:'js'
+          },
+          {
+            text:'Css',
+            value:'css'
+          }]
+      }
+    }
+  )
+</script>
+</body>
+</html>

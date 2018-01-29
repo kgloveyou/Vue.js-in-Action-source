@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>下拉列表（多选）</title>
+</head>
+<body>
+<div id="app">
+  <select v-model="selected">
+    <option :value="{number:123}">123</option>
+  </select>
+  {{selected.number}}
+</div>
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script>
+  var app=new Vue({
+      el:'#app',
+      data:{
+        selected:''
+      }
+    }
+  )
+</script>
+</body>
+</html>

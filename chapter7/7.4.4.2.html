@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>作用域Slot</title>
+</head>
+<body>
+<div id="app">
+  <my-list :books="books">
+    <template slot="book" scope="props">
+      <li>{{props.bookName}}</li>
+    </template>
+  </my-list>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script>
+  Vue.component('my-list',{
+    props:{
+      books:{
+        type:Array,
+        default:function () {
+          return [];
+        }
+      }
+    },
+    template:'<ul><slot name="book" v-for="book in books" :book-name="book.name"></slot></ul>'
+  });
+  var app=new Vue({
+      el:'#app',
+      data:{
+        books:[
+          {name:'vue.js实战'},
+          {name:'js语言精粹'},
+          {name:'js高级程序设计'}
+        ]
+      }
+    }
+  )
+</script>
+</body>
+</html>

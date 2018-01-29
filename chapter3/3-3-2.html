@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>计算属性缓存</title>
+</head>
+<body>
+<div id="app">
+  当前时间:{{now}}
+</div>
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script>
+  var app=new Vue({
+      el:'#app',
+      computed:{
+        now:function(){
+          return Date.now();
+        }
+      }
+    }
+  )
+</script>
+</body>
+</html>
