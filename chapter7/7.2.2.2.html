@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>单向数据流</title>
+</head>
+<body>
+<div id="app">
+  <my-component :width="100"></my-component>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script>
+  Vue.component('my-component',{
+    props:['width'],
+    template:'<div :style="style">组件内容</div>',
+    computed:{
+      style:function () {
+        return {
+          width:this.width+"px"
+        }
+      }
+    }
+  });
+  var app=new Vue({
+      el:'#app'
+    }
+  )
+</script>
+</body>
+</html>
