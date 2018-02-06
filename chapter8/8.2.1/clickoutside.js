@@ -8,7 +8,7 @@ Vue.directive('clickoutside',{
         return false;
       }
       if(binding.expression){
-        binding.value(e);
+        binding.value(/*e*/);
       }
     }
     el._vueClickOutside_=documentHandler;
